@@ -1,7 +1,6 @@
 <div align="center">
-	<a href="https://sindresorhus.com/actions">
-		<img src="./assets/logo.png" width="200" height="200">
-	</a>
+	<br />
+	<img src="./assets/logo.png" width="200">
 	<h1>Prompta</h1>
   <h3>A powerful CLI tool for managing AI prompts with modern features</h3>
 </div>
