@@ -3,7 +3,7 @@
 		<img src="./assets/logo.png" width="200" height="200">
 	</a>
 	<h1>Prompta</h1>
-  <p>A powerful CLI tool for managing AI prompts with modern features</p>
+  <h3>A powerful CLI tool for managing AI prompts with modern features</h3>
 </div>
 
 <!-- <p align="center">
