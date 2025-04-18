@@ -205,7 +205,7 @@ npm install -g prompta
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/prompta.git
+git clone https://github.com/sanjaysunil/prompta.git
 cd prompta
 
 # Install dependencies
